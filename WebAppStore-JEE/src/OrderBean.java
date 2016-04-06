@@ -1,28 +1,45 @@
 import javax.faces.bean.ManagedBean;
+import javax.validation.constraints.*;
+
+import org.hibernate.validator.constraints.Email;
 
 @ManagedBean(name = "order")
 public class OrderBean {
 	
 	//Customer Information
+	@NotNull @Size(min=2, max=240)
 	private String custFirstName;
+	@NotNull @Size(min=2, max=240)
 	private String custLastName;
+	@NotNull @Email
 	private String custEmail;
+	@NotNull 
 	private String custPhone;
 	
 	//Shipping Information
+	@NotNull 
 	private String shippingAddress;
+	@NotNull 
 	private String shippingCity;
+	@NotNull 
 	private String shippingCountry;
+	@NotNull 
 	private String shippingProvince;
+	@NotNull 
 	private String shippingPostalCode;
 	
 	//Payment Information
+	@NotNull 
 	private String paymentType;
+	@NotNull 
 	private long creditNumber;
 	
 	//Product Information
+	@NotNull 
 	private String productName;
+	@NotNull 
 	private float productPrice;
+	@NotNull 
 	private int productQuantity;
 	
 	
